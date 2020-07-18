@@ -1,0 +1,28 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Steamy Gamers discord bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "discord-bot"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Kenny Mead",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.2.0",
+    "ffmpeg-static": "^4.2.5",
+    "git": "^0.1.5",
+    "moment": "^2.27.0",
+    "winston": "^3.3.3",
+    "ytdl-core": "^2.1.7"
+  }
+}
