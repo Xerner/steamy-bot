@@ -17,6 +17,6 @@ module.exports = {
     musicQueue.songs.forEach((song) =>
       embed.addFields({ name: `${song.title}`, value: `Length: ${song.totalDuration}]` })
     );
-    message.embed(embed);
+    message.channel.send(embed);
   }
 };

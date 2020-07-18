@@ -8,7 +8,7 @@
 // https://discordjs.guide/miscellaneous/useful-packages.html#winston
 // ------------------------------------------------------------------------------------------------
 const Discord = require('discord.js');
-const client = new Discord.client();
+const client = new Discord.Client();
 const fs = require('fs');
 
 // Make command handler
@@ -107,7 +107,7 @@ client.on('message', (message) => {
   validateCooldown(command, message, cooldowns, Discord);
   // Execute command ----------------------------------------------------- Execution
   try {
-    command.run(message, args, musicQueue);
+    command.execute(message, args, musicQueue);
   } catch (error) {
     console.error(error);
     allowInternal && _prefix == iprefix

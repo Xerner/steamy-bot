@@ -1,5 +1,3 @@
-const { Command } = require('discord.js-commando');
-const { prefix } = require('../../config.json');
 const Discord = require('discord.js');
 
 // Displays information about a song. default song is index 0

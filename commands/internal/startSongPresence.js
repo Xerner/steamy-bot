@@ -41,6 +41,7 @@ function startTimeoutInterval(message, musicQueue) {
         );
     } catch (error) {
       console.log(error);
+      clearInterval(musicQueue.musicPresence.intervalObj);
     }
   }, intervalms);
 }

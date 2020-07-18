@@ -40,7 +40,7 @@ module.exports = {
 async function play(message, args, musicQueue, song) {
   // Essentially, I am writing the online audio stream into a local file,
   // which, in this case is called file.webm
-  let writeStream = await ytdl(song.url).pipe(fs.createWriteStream(songFileName, { flags: 'w' }));
+  let writeStream = await ytdl(song.url, { filter: 'audioonly' }).pipe(fs.createWriteStream(songFileName, { flags: 'w' }));
 
   // Adding a small delay here so that a potentially slow write process above
   // won't hamper the reading process in the next steps
@@ -51,7 +51,7 @@ async function play(message, args, musicQueue, song) {
 
   // Created a StreamDispatcher playing the read stream created above
   const dispatcher = musicQueue.connection
-    .play(readStream, { volume: musicQueue.volume, bitrate: 'auto', plp: 0, fec: true })
+    .play(readStream, { volume: musicQueue.volume, bitrate: 64000, plp: 0, fec: true })
     .on('end', () => {
       console.log('Stream ended!');
       writeStream.end();
