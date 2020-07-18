@@ -51,7 +51,7 @@ async function play(message, args, musicQueue, song) {
 
   // Created a StreamDispatcher playing the read stream created above
   const dispatcher = musicQueue.connection
-    .play(readStream, { volume: musicQueue.volume, bitrate: 64000, plp: 0, fec: true })
+    .play(readStream, { volume: musicQueue.volume, bitrate: 96000, plp: 0, fec: true })
     .on('end', () => {
       console.log('Stream ended!');
       writeStream.end();
