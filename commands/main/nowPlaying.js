@@ -12,7 +12,7 @@ module.exports = {
     const song = musicQueue.songs[0];
     if (!musicQueue.songs[0]) return message.channel.send('Nothings playing retard');
 
-    message.embed(
+    message.channel.send(
       new Discord.MessageEmbed()
         .setColor('#0A0A20')
         .setTitle('Now Playing')
